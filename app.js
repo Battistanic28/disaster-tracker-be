@@ -1,6 +1,7 @@
 "use-strict";
 
 const express = require('express')
+const cors = require("cors");
 const { ExpressError } = require("./expressError");
 
 const authRoutes = require("./routes/auth");
@@ -9,6 +10,7 @@ const postsRoutes = require("./routes/posts");
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use("/auth", authRoutes);
 app.use("/users", usersRoutes);
