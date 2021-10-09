@@ -11,16 +11,6 @@ router.get('/', async (req, res) => {
       } catch (err) {
         return next(err);
       }
-})
-
-router.post('/register', async (req, res, next) => {
-  try {
-      const newUser = await User.register({ ...req.body, isAdmin: false});
-      return res.status(201).json({newUser});
-    } catch (err) {
-      return next(err);
-    }
-})
- 
+}) 
 
 module.exports = router; 
