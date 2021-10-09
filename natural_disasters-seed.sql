@@ -12,8 +12,7 @@ VALUES ('testuser',
         'joel@joelburton.com',
         TRUE);
 
-INSERT INTO posts (post_id, event_id, user_id, post)
-VALUES ('post_1',
-        'event_1',
+INSERT INTO posts (event_id, user_id, post)
+VALUES ('event_1',
         'user_1',
         'This is a post about event 1');

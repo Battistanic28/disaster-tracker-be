@@ -17,7 +17,7 @@ class Post {
 
     static async findAll() {
         const result = await db.query(
-              `SELECT post_id AS "postId",
+              `SELECT id AS "postId",
                       event_id AS "eventId",
                       user_id AS "userId",
                       post
@@ -29,7 +29,7 @@ class Post {
 
     static async get(id) {
       const result = await db.query(
-            `SELECT post_id AS "postId",
+            `SELECT id AS "postId",
                     event_id AS "eventId",
                     user_id AS "userId",
                     post

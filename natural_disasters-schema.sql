@@ -9,7 +9,7 @@ CREATE TABLE users (
 );
 
 CREATE TABLE posts (
-  post_id VARCHAR(25) PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   event_id TEXT NOT NULL,
   user_id TEXT NOT NULL,
   post TEXT NOT NULL

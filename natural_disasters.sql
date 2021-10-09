@@ -1,4 +1,4 @@
-\echo 'Delete and recreate jobly db?'
+\echo 'Delete and recreate natural_disasters db?'
 \prompt 'Return for yes or control-C to cancel > ' foo
 
 DROP DATABASE natural_disasters;
@@ -8,7 +8,7 @@ CREATE DATABASE natural_disasters;
 \i natural_disasters-schema.sql
 \i natural_disasters-seed.sql
 
-\echo 'Delete and recreate jobly_test db?'
+\echo 'Delete and recreate natural_disasters_test db?'
 \prompt 'Return for yes or control-C to cancel > ' foo
 
 DROP DATABASE natural_disasters_test;
