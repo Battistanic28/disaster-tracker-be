@@ -3,17 +3,17 @@ const db = require("../db");
 
 class Post {
 
-    // static async create(post_id, event_id, user_id, post) {
-    //   const result = await db.query(
-    //       `INSERT INTO posts 
-    //       (post_id, event_id, user_id, post) 
-    //       VALUES ($1, $2, $3, $4)
-    //       RETURNING user_id, post`,
-    //       [post_id, event_id, user_id, post]
-    //   );
-    //   const post = result.rows[0];
-    //   return post;
-    // }
+    static async create({event_id, user_id, post}) {
+      const result = await db.query(
+          `INSERT INTO posts 
+          (event_id, user_id, post) 
+          VALUES ($1, $2, $3)
+          RETURNING user_id, post`,
+          [event_id, user_id, post]
+      );
+      const newPost = result.rows[0];
+      return newPost;
+    }
 
     static async findAll() {
         const result = await db.query(

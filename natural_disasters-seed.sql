@@ -10,9 +10,24 @@ VALUES ('testuser',
         'Test',
         'Admin!',
         'joel@joelburton.com',
+        TRUE),
+       ('Battistanic90',
+        '$2b$12$1Cr3ZbtOghx4Ym2oIsBT5.RY89l3PW4mDqRPMYCF3PlxOx0.ryaCK',
+        'Nick',
+        'Battista',
+        'test@test.com',
         TRUE);
 
 INSERT INTO posts (event_id, user_id, post)
 VALUES ('event_1',
         'user_1',
-        'This is a post about event 1');
+        'This is a post about event 1'),
+        ('EONET_5435',
+        'flamebuzz',
+        'Indulgence announcing uncommonly met she continuing two unpleasing terminated. Now busy say down the shed eyes roof paid her. Of shameless collected suspicion existence in. Share walls stuff think but the arise guest. Course suffer to do he sussex it window advice. Yet matter enable misery end extent common men should. Her indulgence but assistance favourable cultivated everything collecting.'),
+        ('EONET_5435',
+        'snipcranky',
+        'Examine she brother prudent add day ham. Far stairs now coming bed oppose hunted become his. You zealously departure had procuring suspicion. Books whose front would purse if be do decay. Quitting you way formerly disposed perceive ladyship are. Common turned boy direct and yet.'),
+        ('EONET_5424',
+        'crossbowpilot',
+        'Attention he extremity unwilling on otherwise. Conviction up partiality as delightful is discovered. Yet jennings resolved disposed exertion you off. Left did fond drew fat head poor. So if he into shot half many long. China fully him every fat was world grave.');
