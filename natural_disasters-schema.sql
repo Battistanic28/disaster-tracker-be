@@ -12,5 +12,13 @@ CREATE TABLE posts (
   id SERIAL PRIMARY KEY,
   event_id TEXT NOT NULL,
   user_id TEXT NOT NULL,
-  post TEXT NOT NULL
+  post TEXT NOT NULL,
+  timestamp TEXT NOT NULL
+);
+
+CREATE TABLE comments (
+  id SERIAL PRIMARY KEY,
+  post_id TEXT NOT NULL,
+  user_id TEXT NOT NULL,
+  comment TEXT NOT NULL
 );

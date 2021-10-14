@@ -32,7 +32,8 @@ class Post {
             `SELECT id AS "postId",
                     event_id AS "eventId",
                     user_id AS "userId",
-                    post
+                    post,
+                    timestamp
               FROM posts
               WHERE event_id=$1`,
               [id]
