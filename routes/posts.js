@@ -3,7 +3,7 @@ const router = express.Router();
 const Post = require("../models/post");
 
 // Get all event posts.
-router.get('/', async (req, res) => {
+router.get('/', async (req, res, next) => {
     try {
         const posts = await Post.findAll();
         return res.json({ posts });
