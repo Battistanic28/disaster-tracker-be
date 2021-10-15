@@ -16,7 +16,7 @@ CREATE TABLE posts (
   created_at DATE NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE comments (
+CREATE TABLE replies (
   id SERIAL PRIMARY KEY,
   post_id TEXT NOT NULL,
   user_id TEXT NOT NULL,

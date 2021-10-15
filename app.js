@@ -7,6 +7,7 @@ const { ExpressError } = require("./expressError");
 const authRoutes = require("./routes/auth");
 const usersRoutes = require("./routes/users");
 const postsRoutes = require("./routes/posts");
+const repliesRoutes = require("./routes/replies");
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use("/auth", authRoutes);
 app.use("/users", usersRoutes);
 app.use("/posts", postsRoutes);
+app.use("/replies", repliesRoutes);
 
 /** Handle 404 errors -- this matches everything */
 app.use(function (req, res, next) {
