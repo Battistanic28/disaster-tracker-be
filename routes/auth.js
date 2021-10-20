@@ -6,6 +6,7 @@ const router = express.Router();
 const User = require("../models/user");
 const userRegistrationSchema = require("../schemas/userRegistrationSchema.json");
 const userAuthSchema = require("../schemas/userAuthSchema.json");
+const { BadRequestError } = require("../expressError");
 
 // Register new user.
 router.post('/register', async (req, res, next) => {
@@ -13,7 +14,7 @@ router.post('/register', async (req, res, next) => {
         const validator = jsonschema.validate(req.body, userRegistrationSchema);
         if (!validator.valid) {
           const errs = validator.errors.map(e => e.stack);
-          console.log(errs)
+          throw new BadRequestError(errs);
         }
         const newUser = await User.register({ ...req.body, isAdmin: false});
         return res.status(201).json({newUser});
@@ -27,7 +28,7 @@ router.post('/token', async (req, res, next) => {
         const validator = jsonschema.validate(req.body, userAuthSchema);
         if (!validator.valid) {
           const errs = validator.errors.map(e => e.stack);
-          console.log(errs);
+          throw new BadRequestError(errs);
         }
             const {username, password} = req.body;
             const user = await User.authenticate(username, password);
