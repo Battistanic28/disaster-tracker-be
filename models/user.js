@@ -32,8 +32,12 @@ class User {
                [username],
         );
     
-        return result.rows;
-      };
+      const user = result.rows[0];
+      if (user) {
+        return user;
+      }
+      console.log("User not found");
+    }
 
 /** Authenticate existing user with username, password
  * 
