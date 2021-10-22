@@ -13,4 +13,14 @@ router.get('/', async (req, res) => {
       }
 }) 
 
+// Get user by username.
+router.get('/:username', async (req, res) => {
+  try {
+      const user = await User.getUser(req.params.username);
+      return res.json({ user });
+    } catch (err) {
+      return next(err);
+    }
+}) 
+
 module.exports = router; 

@@ -20,6 +20,21 @@ class User {
         return result.rows;
       };
 
+      static async getUser(username) {
+        const result = await db.query(
+              `SELECT username,
+                      first_name AS "firstName",
+                      last_name AS "lastName",
+                      email,
+                      is_admin AS "isAdmin"
+               FROM users
+               WHERE username = $1`,
+               [username],
+        );
+    
+        return result.rows;
+      };
+
 /** Authenticate existing user with username, password
  * 
  * !Needs error handling!
