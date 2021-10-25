@@ -22,7 +22,8 @@ class Reply {
                       user_id AS "userId",
                       comment,
                       created_at AS date
-               FROM replies`
+               FROM replies
+               ORDER BY created_at DESC`,
         );
     
         return result.rows;

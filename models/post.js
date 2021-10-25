@@ -36,7 +36,8 @@ class Post {
                     post,
                     created_at AS date
                     FROM posts
-              WHERE event_id=$1`,
+              WHERE event_id=$1
+              ORDER BY created_at DESC`,
               [id]
       );
   
