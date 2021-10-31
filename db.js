@@ -1,19 +1,23 @@
 "use strict";
 
 const { Client } = require("pg");
+const { getDatabaseUri } = require("./config");
 
-let DB_URI;
+let db;
 
-if (process.env.NODE_ENV === "test") {
-  DB_URI = "postgresql:///natural_disasters_test";
+if (process.env.NODE_ENV === "production") {
+  db = new Client({
+    connectionString: getDatabaseUri(),
+    ssl: {
+      rejectUnauthorized: false
+    }
+  });
 } else {
-  DB_URI = "postgresql:///natural_disasters";
+  db = new Client({
+    connectionString: getDatabaseUri()
+  });
 }
 
-
-let db = new Client({
-  connectionString: DB_URI
-})
 
 db.connect();
 

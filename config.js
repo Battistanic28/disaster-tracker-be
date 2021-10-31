@@ -5,9 +5,16 @@ const BCRYPT_WORK_FACTOR = process.env.NODE_ENV === "test" ? 1 : 12;
 const DATABASE_URL = process.env.DATABASE_URL || "natural_disasters";
 const SECRET_KEY = process.env.SECRET_KEY || "ABC123";
 
+function getDatabaseUri() {
+    return (process.env.NODE_ENV === "test")
+        ? "natural_disasters-test"
+        : process.env.DATABASE_URL || "natural_disasters";
+  }
+
 module.exports = {
     PORT,
     BCRYPT_WORK_FACTOR,
     DATABASE_URL,
-    SECRET_KEY
+    SECRET_KEY,
+    getDatabaseUri
 };
